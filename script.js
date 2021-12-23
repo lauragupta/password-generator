@@ -17,10 +17,13 @@ var characters = ["!", "#", "$", "%", "&", "*", "+", "-", "/", "?", "@", "^", "_
 function generatePassword() {
 
   //prompt to complete password and enter # of characters (limit 8-128)
-
+  var numberCharacters = prompt("The password can be 8-128 characters. How many characters would you like your password to be?", "8-128"); 
 
   //alert if number is not in range
-
+  if (numberCharacters < 8 || numberCharacters > 128) {
+    alert("You must choose a number from 8-128.");
+    return;
+  }
 
   //prompt to choose characters... Would you like to include uppercase letters
 
@@ -48,7 +51,7 @@ function generatePassword() {
 
   // random shuffle of characters? 
 
-  return "Blu3";
+  return "I'm working on it. :) ";
 
 }
 
@@ -57,8 +60,11 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
-
+  if (password === undefined) {
+   return;
+  } else {
+    passwordText.value = password;
+  }
 }
 
 // Add event listener to generate button
