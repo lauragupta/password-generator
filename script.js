@@ -13,6 +13,12 @@ var numberArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 //create arrays for special characters
 var characterArray = ["!", "#", "$", "%", "&", "*", "+", "-", "/", "?", "@", "^", "_", "~"]
 
+//random math generator
+function getRandomInt(max) {
+  var randomNumber = Math.random();
+  var randomMax = randomNumber * max;
+  return Math.floor(randomMax);
+}
 
 function generatePassword() {
 
@@ -52,8 +58,8 @@ function generatePassword() {
     return;
   }
 
-  //random math generator
-
+  //create an array of chosen character sets
+  
 
   //loop through selected arrays until # of characters is reached
 
