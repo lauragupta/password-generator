@@ -74,13 +74,24 @@ function generatePassword() {
     myCharacters.push(characterArray);
   }
 
-
   //loop through selected arrays until # of characters is reached
-
+var almostMyPassword = [];
+  var currentlyActiveCharacters;
+for(var i = 0, characterSetCounter = 0; i < numberCharacters; i++) {
+  currentlyActiveCharacters = myCharacters[characterSetCounter];
+  var randomInt = getRandomInt(currentlyActiveCharacters.length);
+  var chosenChraracter = currentlyActiveCharacters[randomInt];
+  almostMyPassword.push(chosenChraracter);
+  if(characterSetCounter === myCharacters.length - 1) {
+    characterSetCounter = 0;
+  } else {
+    characterSetCounter++;
+  }
+}
 
   // random shuffle of characters? 
 
-  return "I'm working on it. :) ";
+  return almostMyPassword;
 
 }
 
