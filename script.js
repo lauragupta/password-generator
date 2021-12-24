@@ -59,7 +59,21 @@ function generatePassword() {
   }
 
   //create an array of chosen character sets
+  var myCharacters = [];
   
+  if (useUppercase) {
+    myCharacters.push(uppercaseLetters);
+  }
+  if (useLowercase) {
+    myCharacters.push(lowercaseLetters);
+  }
+  if (useNumbers) {
+    myCharacters.push(numberArray);
+  }
+  if (useSpecialCharacters) {
+    myCharacters.push(characterArray);
+  }
+
 
   //loop through selected arrays until # of characters is reached
 
