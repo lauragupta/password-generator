@@ -18,32 +18,39 @@ function generatePassword() {
 
   //confirm to complete password and enter # of characters (limit 8-128)
   var numberCharacters = prompt("The password can be 8-128 characters. How many characters would you like your password to be?"); 
+  console.log(numberCharacters)
+
+  //chanage string value to integer
+  numberCharacters = parseInt(numberCharacters);
 
   //alert if number is not in range
-  if (numberCharacters < 8 || numberCharacters > 128) {
+  if (isNaN(numberCharacters)  || numberCharacters < 8 || numberCharacters > 128) {
     alert("You must choose a number from 8-128.");
     console.log(numberCharacters);
     return;
   }
 
   //confirm to choose characters... Would you like to include uppercase letters
-  var uppercase = confirm("You need to include at least one character set. Would you like to include uppercase letters? Cancel=no  OK=Yes");
-  console.log(uppercase);
+  var useUppercase = confirm("You need to include at least one character set. Would you like to include uppercase letters? Cancel=no  OK=Yes");
+  console.log(useUppercase);
 
   // confirm would you like to inlcude lower case letters
-  var lowercase = confirm("You need to include at least one character set. Would you like to include lowercase letters? Cancel=no  OK=Yes");
-  console.log(lowercase);
+  var useLowercase = confirm("You need to include at least one character set. Would you like to include lowercase letters? Cancel=no  OK=Yes");
+  console.log(useLowercase);
 
   //confirm would you like to include numbers
-  var numbers = confirm("You need to include at least one character set. Would you like to include numbers? Cancel=no  OK=Yes");
-  console.log(numbers);
+  var useNumbers = confirm("You need to include at least one character set. Would you like to include numbers? Cancel=no  OK=Yes");
+  console.log(useNumbers);
 
   //confirm would you like to include special characters
-  var specialCharacters = confirm("You need to include at least one character set. Would you like to include Special Characters? Cancel=no  OK=Yes");
-  console.log(specialCharacters);
+  var useSpecialCharacters = confirm("You need to include at least one character set. Would you like to include Special Characters? Cancel=no  OK=Yes");
+  console.log(useSpecialCharacters);
 
   //alert if no choice was selected and repeat to step choose first character set
-
+  if (!useUppercase && !useLowercase && !useNumbers && !useSpecialCharacters) { 
+    alert("You must choose at least one character set.");
+    return;
+  }
 
   //random math generator
 
