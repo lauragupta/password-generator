@@ -35,20 +35,20 @@ function generatePassword() {
   }
 
   //confirm to choose characters... Would you like to include uppercase letters
-  var useUppercase = confirm("You need to include at least one character set. Would you like to include uppercase letters in your password? Cancel=No  OK=Yes");
+  var useUppercase = confirm("You need to include 1-4 of the 4 character sets. Would you like to include uppercase letters in your password? Cancel=No  OK=Yes");
 
   // confirm would you like to inlcude lower case letters
-  var useLowercase = confirm("You need to include at least one character set. Would you like to include lowercase letters in your password? Cancel=No  OK=Yes");
+  var useLowercase = confirm("You need to include 1-4 of the 4 character sets. Would you like to include lowercase letters in your password? Cancel=No  OK=Yes");
 
   //confirm would you like to include numbers
-  var useNumbers = confirm("You need to include at least one character set. Would you like to include numbers in your password? Cancel=No  OK=Yes");
+  var useNumbers = confirm("You need to include 1-4 of the 4 character sets. Would you like to include numbers in your password? Cancel=No  OK=Yes");
 
   //confirm would you like to include special characters
-  var useSpecialCharacters = confirm("You need to include at least one character set. Would you like to include Special Characters in your password? Cancel=No  OK=Yes");
+  var useSpecialCharacters = confirm("You need to include 1-4 of the 4 character sets. Would you like to include Special Characters in your password? Cancel=No  OK=Yes");
 
   //alert if no choice was selected and repeat to step choose first character set
   if (!useUppercase && !useLowercase && !useNumbers && !useSpecialCharacters) { 
-    alert("You must choose at least one character set. Please try again.");
+    alert("You must choose at least 1 character set. Please try again.");
     return;
   }
 
